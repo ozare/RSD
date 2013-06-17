@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ProductCode: MyText
+  ProductName: MyText
+  ProductDepth: MyText
+  ProductCategory: MyText
+  ProductCost: 1
+
+two:
+  ProductCode: MyText
+  ProductName: MyText
+  ProductDepth: MyText
+  ProductCategory: MyText
+  ProductCost: 1

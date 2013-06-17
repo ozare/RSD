@@ -1,0 +1,53 @@
+<%= form_for(@supplyorder) do |f| %>
+  <% if @supplyorder.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@supplyorder.errors.count, "error") %> prohibited this supplyorder from being saved:</h2>
+
+      <ul>
+      <% @supplyorder.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :SupplierRef %><br />
+    <%= f.number_field :SupplierRef %>
+  </div>
+  <div class="field">
+    <%= f.label :CreatedByRef %><br />
+    <%= f.number_field :CreatedByRef %>
+  </div>
+  <div class="field">
+    <%= f.label :SubmittedDate %><br />
+    <%= f.date_select :SubmittedDate %>
+  </div>
+  <div class="field">
+    <%= f.label :ExpectedDate %><br />
+    <%= f.date_select :ExpectedDate %>
+  </div>
+  <div class="field">
+    <%= f.label :ShippingFee %><br />
+    <%= f.number_field :ShippingFee %>
+  </div>
+  <div class="field">
+    <%= f.label :PaymentDate %><br />
+    <%= f.date_select :PaymentDate %>
+  </div>
+  <div class="field">
+    <%= f.label :PaymentAmmount %><br />
+    <%= f.number_field :PaymentAmmount %>
+  </div>
+  <div class="field">
+    <%= f.label :PaymentMethod %><br />
+    <%= f.text_field :PaymentMethod %>
+  </div>
+  <div class="field">
+    <%= f.label :StatusRef %><br />
+    <%= f.number_field :StatusRef %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

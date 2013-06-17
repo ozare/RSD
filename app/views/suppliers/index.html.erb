@@ -1,0 +1,37 @@
+<h1>Listing suppliers</h1>
+
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Lastname</th>
+    <th>Firstname</th>
+    <th>Phone</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>Country</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @suppliers.each do |supplier| %>
+  <tr>
+    <td><%= supplier.Company %></td>
+    <td><%= supplier.LastName %></td>
+    <td><%= supplier.FirstName %></td>
+    <td><%= supplier.Phone %></td>
+    <td><%= supplier.Address %></td>
+    <td><%= supplier.City %></td>
+    <td><%= supplier.Country %></td>
+    <td><%= link_to 'Show', supplier %></td>
+    <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>
+    <td><%= link_to 'Destroy', supplier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Supplier', new_supplier_path %>
+</br>
+<a href="http://0.0.0.0:3000/index.html">Home</a>

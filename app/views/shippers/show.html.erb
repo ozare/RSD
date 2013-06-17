@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Company:</b>
+  <%= @shipper.Company %>
+</p>
+
+<p>
+  <b>Lastname:</b>
+  <%= @shipper.LastName %>
+</p>
+
+<p>
+  <b>Firstname:</b>
+  <%= @shipper.FirstName %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @shipper.Phone %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @shipper.Address %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @shipper.City %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @shipper.Country %>
+</p>
+
+
+<%= link_to 'Edit', edit_shipper_path(@shipper) %> |
+<%= link_to 'Back', shippers_path %>

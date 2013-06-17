@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  SupplierRef: 1
+  CreatedByRef: 1
+  SubmittedDate: 2013-06-16
+  ExpectedDate: 2013-06-16
+  ShippingFee: 1
+  PaymentDate: 2013-06-16
+  PaymentAmmount: 1
+  PaymentMethod: MyText
+  StatusRef: 1
+
+two:
+  SupplierRef: 1
+  CreatedByRef: 1
+  SubmittedDate: 2013-06-16
+  ExpectedDate: 2013-06-16
+  ShippingFee: 1
+  PaymentDate: 2013-06-16
+  PaymentAmmount: 1
+  PaymentMethod: MyText
+  StatusRef: 1

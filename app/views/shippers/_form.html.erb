@@ -1,0 +1,45 @@
+<%= form_for(@shipper) do |f| %>
+  <% if @shipper.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shipper.errors.count, "error") %> prohibited this shipper from being saved:</h2>
+
+      <ul>
+      <% @shipper.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Company %><br />
+    <%= f.text_field :Company %>
+  </div>
+  <div class="field">
+    <%= f.label :LastName %><br />
+    <%= f.text_field :LastName %>
+  </div>
+  <div class="field">
+    <%= f.label :FirstName %><br />
+    <%= f.text_field :FirstName %>
+  </div>
+  <div class="field">
+    <%= f.label :Phone %><br />
+    <%= f.text_field :Phone %>
+  </div>
+  <div class="field">
+    <%= f.label :Address %><br />
+    <%= f.text_field :Address %>
+  </div>
+  <div class="field">
+    <%= f.label :City %><br />
+    <%= f.text_field :City %>
+  </div>
+  <div class="field">
+    <%= f.label :Country %><br />
+    <%= f.text_field :Country %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

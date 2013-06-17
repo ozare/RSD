@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Supplierref:</b>
+  <%= @supplyorder.SupplierRef %>
+</p>
+
+<p>
+  <b>Createdbyref:</b>
+  <%= @supplyorder.CreatedByRef %>
+</p>
+
+<p>
+  <b>Submitteddate:</b>
+  <%= @supplyorder.SubmittedDate %>
+</p>
+
+<p>
+  <b>Expecteddate:</b>
+  <%= @supplyorder.ExpectedDate %>
+</p>
+
+<p>
+  <b>Shippingfee:</b>
+  <%= @supplyorder.ShippingFee %>
+</p>
+
+<p>
+  <b>Paymentdate:</b>
+  <%= @supplyorder.PaymentDate %>
+</p>
+
+<p>
+  <b>Paymentammount:</b>
+  <%= @supplyorder.PaymentAmmount %>
+</p>
+
+<p>
+  <b>Paymentmethod:</b>
+  <%= @supplyorder.PaymentMethod %>
+</p>
+
+<p>
+  <b>Statusref:</b>
+  <%= @supplyorder.StatusRef %>
+</p>
+
+
+<%= link_to 'Edit', edit_supplyorder_path(@supplyorder) %> |
+<%= link_to 'Back', supplyorders_path %>

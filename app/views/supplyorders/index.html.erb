@@ -1,0 +1,48 @@
+<h1>Listing supplyorders</h1>
+
+<table>
+  <tr>
+    <th>Supplierref</th>
+
+    <th>SupplierName</th>
+
+    <th>Createdbyref</th>
+    <th>Submitteddate</th>
+    <th>Expecteddate</th>
+    <th>Shippingfee</th>
+    <th>Paymentdate</th>
+    <th>Paymentammount</th>
+    <th>Paymentmethod</th>
+    <th>Statusref</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @supplyorders.each do |supplyorder| %>
+  <tr>
+    <td><%= supplyorder.SupplierRef %></td>
+
+    <td><%= supplyorder.SupplierRef %></td>    
+    
+    <td><%= supplyorder.CreatedByRef %></td>
+    <td><%= supplyorder.SubmittedDate %></td>
+    <td><%= supplyorder.ExpectedDate %></td>
+    <td><%= supplyorder.ShippingFee %></td>
+    <td><%= supplyorder.PaymentDate %></td>
+    <td><%= supplyorder.PaymentAmmount %></td>
+    <td><%= supplyorder.PaymentMethod %></td>
+    <td><%= supplyorder.StatusRef %></td>
+    <td><%= link_to 'Show', supplyorder %></td>
+    <td><%= link_to 'Edit', edit_supplyorder_path(supplyorder) %></td>
+    <td><%= link_to 'Destroy', supplyorder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Supplyorder', new_supplyorder_path %>
+</br>
+<a href="http://0.0.0.0:3000/index.html">Home</a>

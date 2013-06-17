@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Company:</b>
+  <%= @employee.Company %>
+</p>
+
+<p>
+  <b>Lastname:</b>
+  <%= @employee.LastName %>
+</p>
+
+<p>
+  <b>Firstname:</b>
+  <%= @employee.FirstName %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @employee.Phone %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @employee.Address %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @employee.City %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @employee.Country %>
+</p>
+
+
+<%= link_to 'Edit', edit_employee_path(@employee) %> |
+<%= link_to 'Back', employees_path %>
