@@ -1,0 +1,23 @@
+<h1>Listing supplyordersstatuses</h1>
+
+<table>
+  <tr>
+    <th>Status</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @supplyordersstatuses.each do |supplyordersstatus| %>
+  <tr>
+    <td><%= supplyordersstatus.Status %></td>
+    <td><%= link_to 'Show', supplyordersstatus %></td>
+    <td><%= link_to 'Edit', edit_supplyordersstatus_path(supplyordersstatus) %></td>
+    <td><%= link_to 'Destroy', supplyordersstatus, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Supplyordersstatus', new_supplyordersstatus_path %>

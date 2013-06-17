@@ -4,6 +4,9 @@ class SupplyordersController < ApplicationController
   def index
     @supplyorders = Supplyorder.all
     #@supplyorders.Supplier.find(:all, :order => 'LastName')
+    @suppliers = Supplier.all
+    @employees = Employee.all
+    @supplyordersstatus = Supplyordersstatus.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,6 +18,9 @@ class SupplyordersController < ApplicationController
   # GET /supplyorders/1.json
   def show
     @supplyorder = Supplyorder.find(params[:id])
+    @supplier = Supplier.find(@supplyorder.SupplierRef)
+    @employee = Employee.find(@supplyorder.CreatedByRef)
+    @supplyordersstatus = Supplyordersstatus.find(@supplyorder.StatusRef)
 
     respond_to do |format|
       format.html # show.html.erb

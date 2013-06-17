@@ -2,11 +2,11 @@
 
 <table>
   <tr>
-    <th>Supplierref</th>
+    
 
-    <th>SupplierName</th>
+    <th>Supplier Name</th>
 
-    <th>Createdbyref</th>
+    <th>Created By</th>
     <th>Submitteddate</th>
     <th>Expecteddate</th>
     <th>Shippingfee</th>
@@ -21,18 +21,37 @@
 
 <% @supplyorders.each do |supplyorder| %>
   <tr>
-    <td><%= supplyorder.SupplierRef %></td>
-
-    <td><%= supplyorder.SupplierRef %></td>    
     
-    <td><%= supplyorder.CreatedByRef %></td>
+
+    <td><% @suppliers.each do |supplier| %>
+      <% if supplyorder.SupplierRef == supplier.id  %>
+        <%= supplier.LastName %>
+        <%= supplier.FirstName %>
+
+      <% end %>
+    <% end %></td> 
+
+    <td><% @employees.each do |employee| %>
+      <% if supplyorder.CreatedByRef == employee.id  %>
+        <%= employee.LastName %>
+        <%= employee.FirstName %>
+
+      <% end %>
+    <% end %></td> 
+
     <td><%= supplyorder.SubmittedDate %></td>
     <td><%= supplyorder.ExpectedDate %></td>
     <td><%= supplyorder.ShippingFee %></td>
     <td><%= supplyorder.PaymentDate %></td>
     <td><%= supplyorder.PaymentAmmount %></td>
     <td><%= supplyorder.PaymentMethod %></td>
-    <td><%= supplyorder.StatusRef %></td>
+
+    <td><% @supplyordersstatus.each do |s| %>
+      <% if supplyorder.StatusRef == s.id  %>
+        <%= s.Status %>
+
+      <% end %>
+    <% end %></td> 
     <td><%= link_to 'Show', supplyorder %></td>
     <td><%= link_to 'Edit', edit_supplyorder_path(supplyorder) %></td>
     <td><%= link_to 'Destroy', supplyorder, method: :delete, data: { confirm: 'Are you sure?' } %></td>

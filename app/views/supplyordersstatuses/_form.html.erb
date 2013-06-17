@@ -1,0 +1,21 @@
+<%= form_for(@supplyordersstatus) do |f| %>
+  <% if @supplyordersstatus.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@supplyordersstatus.errors.count, "error") %> prohibited this supplyordersstatus from being saved:</h2>
+
+      <ul>
+      <% @supplyordersstatus.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Status %><br />
+    <%= f.text_area :Status %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
