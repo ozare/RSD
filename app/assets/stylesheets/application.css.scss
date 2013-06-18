@@ -1,0 +1,110 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+.content {
+  
+  padding: 70px 0;
+  margin-top: 70px;
+  border-top: 1px solid #e5e5e5;
+  background-color: #f5f5f5;
+  margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  box-shadow: 0 1px 2px rgba(0,0,0,.15);
+}
+/*
+ *= require bootstrap
+ *= require google-code-prettify
+*/
+
+body {
+  padding-top: 60px;
+}
+
+.alert p.error_notification {
+  margin-bottom: 0;
+}
+
+div.well {
+  padding: 5px 10px;
+}
+
+pre { display: none; }
+
+article .content {
+  margin: 10px 0;
+}
+
+#article-comments {
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: #f5f5f5;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+#comments {
+  margin-bottom: 10px;
+}
+
+#article-comments form {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  margin-bottom: 0;
+}
+
+#article-comments .form-actions {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.form-actions {
+  height: 30px;
+}
+
+.navbar .brand {
+  float: right;
+  padding-right: 0;
+}
+
+.form-vertical .boolean .controls {
+  display: inline-block;
+}
+
+.footer {
+  padding: 70px 0;
+  margin-top: 150px;
+  border-top: 1px solid #e5e5e5;
+  background-color: #f5f5f5;
+  height: 124px;
+}
+
+.footer p {
+  margin-bottom: 0;
+  color: #777;
+}
+
+.footer-links {
+  margin: 10px 0;
+}
+
+.footer-links li {
+  display: inline;
+  padding: 0 2px;
+}
+
+.footer-links li:first-child {
+  padding-left: 0;
+}

@@ -1,0 +1,68 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Employeeref:</b>
+  <%= @employee.LastName %>
+  <%= @employee.FirstName %>
+</p>
+
+<p>
+  <b>Customerref:</b>
+  <%= @customer.LastName %>
+  <%= @customer.FirstName %>
+</p>
+
+<p>
+  <b>Orderdate:</b>
+  <%= @order.OrderDate %>
+</p>
+
+<p>
+  <b>Shippeddate:</b>
+  <%= @order.ShippedDate %>
+</p>
+
+<p>
+  <b>Shipperref:</b>
+  <%= @shipper.LastName %>
+  <%= @shipper.FirstName %>
+</p>
+
+<p>
+  <b>Shipfee:</b>
+  <%= @order.ShipFee %>
+</p>
+
+<p>
+  <b>Paymenttype:</b>
+  <%= @order.PaymentType %>
+</p>
+
+<p>
+  <b>Paymentdate:</b>
+  <%= @order.PaymentDate %>
+</p>
+
+<p>
+  <b>Statusref:</b>
+  <%= @supplyordersstatus.Status %>
+</p>
+
+<p>
+  <b>Productref:</b>
+  <%= @product.ProductName %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @order.Quantity %>
+</p>
+
+<p>
+  <b>Total:</b>
+  <%= @order.Total %>
+</p>
+
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

@@ -1,4 +1,4 @@
-<%= form_for(@supplyorder) do |f| %>
+<%= simple_form_for @supplyorder, :html => { :class => 'form-horizontal' } do |f| %>
   <% if @supplyorder.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@supplyorder.errors.count, "error") %> prohibited this supplyorder from being saved:</h2>
@@ -11,43 +11,60 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :SupplierRef %><br />
-    <%= f.number_field :SupplierRef %>
+  <div class='field'>
+    <%= f.input :name, :wrapper => :prepend, :label => false do %>
+    <%= content_tag :span, "SupplierRef", :class => "add-on" %>
+    <%= f.collection_select(:SupplierRef, Supplier.all, :id, :LastName)%>
+  <% end %>
   </div>
   <div class="field">
-    <%= f.label :CreatedByRef %><br />
-    <%= f.number_field :CreatedByRef %>
+    <%= f.input :name, :wrapper => :prepend, :label => false do %>
+    <%= content_tag :span, "CreatedByRef", :class => "add-on" %>
+    <%= f.collection_select(:CreatedByRef, Employee.all, :id, :LastName)%>
+  <% end %>
   </div>
   <div class="field">
-    <%= f.label :SubmittedDate %><br />
+   <%= f.input :name, :wrapper => :prepend, :label => false do %>
+    <%= content_tag :span, "SubmittedDate", :class => "add-on" %>
     <%= f.date_select :SubmittedDate %>
+    <%end%>
   </div>
   <div class="field">
-    <%= f.label :ExpectedDate %><br />
+    <%= f.input :name, :wrapper => :prepend, :label => false do %>
+    <%= content_tag :span, "ExpectedDate", :class => "add-on" %>
     <%= f.date_select :ExpectedDate %>
-  </div>
+    <%end%>
   <div class="field">
-    <%= f.label :ShippingFee %><br />
+    <%= f.input :name, :wrapper => :prepend, :label => false do %>
+    <%= content_tag :span, "ShippingFee", :class => "add-on" %>
     <%= f.number_field :ShippingFee %>
+    <%end%>
   </div>
   <div class="field">
-    <%= f.label :PaymentDate %><br />
+    <%= f.input :name, :wrapper => :prepend, :label => false do %>
+    <%= content_tag :span, "PaymentDate", :class => "add-on" %>
     <%= f.date_select :PaymentDate %>
+    <%end%>
   </div>
   <div class="field">
-    <%= f.label :PaymentAmmount %><br />
+    <%= f.input :name, :wrapper => :prepend, :label => false do %>
+    <%= content_tag :span, "PaymentAmmount", :class => "add-on" %>
     <%= f.number_field :PaymentAmmount %>
+    <%end%>
   </div>
   <div class="field">
-    <%= f.label :PaymentMethod %><br />
+    <%= f.input :name, :wrapper => :prepend, :label => false do %>
+    <%= content_tag :span, "PaymentMethod", :class => "add-on" %>
     <%= f.text_field :PaymentMethod %>
+  <% end %>
   </div>
   <div class="field">
-    <%= f.label :StatusRef %><br />
-    <%= f.number_field :StatusRef %>
+   <%= f.input :name, :wrapper => :prepend, :label => false do %>
+    <%= content_tag :span, "StatusRef", :class => "add-on" %>
+    <%= f.collection_select(:StatusRef, Supplyordersstatus.all, :id, :Status)%>
+    <%end%>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
   </div>
 <% end %>

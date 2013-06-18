@@ -2,7 +2,8 @@ class SuppliersController < ApplicationController
   # GET /suppliers
   # GET /suppliers.json
   def index
-    @suppliers = Supplier.all
+    #@suppliers = Supplier.all
+    @suppliers = Supplier.search(params[:search])
     #@suppliers = Supplier.find(:all, :order => 'LastName')
 
     respond_to do |format|

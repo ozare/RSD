@@ -1,0 +1,88 @@
+<h1>Listing orders</h1>
+
+<table class="table table-bordered table-striped">
+  <tr>
+    <th>Employeeref</th>
+    <th>Customerref</th>
+    <th>Orderdate</th>
+    <th>Shippeddate</th>
+    <th>Shipperref</th>
+    <th>Shipfee</th>
+    <th>Payment<br/>type</th>
+    <th>Paymentdate</th>
+    <th>Statusref</th>
+    <th>Productref</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    <th>Total</th>
+    
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @orders.each do |order| %>
+  <tr>
+    <td><% @employees.each do |s| %>
+      <% if order.EmployeeRef == s.id  %>
+        <%= s.LastName%>
+        <%= s.FirstName%>
+
+      <% end %>
+    <% end %></td> 
+
+    <td><% @customers.each do |s| %>
+      <% if order.CustomerRef == s.id  %>
+        <%= s.LastName%>
+        <%= s.FirstName%>
+
+      <% end %>
+    <% end %></td> 
+
+    <td><%= order.OrderDate %></td>
+    <td><%= order.ShippedDate %></td>
+
+    <td><% @shippers.each do |s| %>
+      <% if order.ShipperRef == s.id  %>
+        <%= s.LastName%>
+        <%= s.FirstName%>
+
+      <% end %>
+    <% end %></td> 
+
+    <td><%= order.ShipFee %></td>
+    <td><%= order.PaymentType %></td>
+    <td><%= order.PaymentDate %></td>
+
+    <td><% @supplyordersstatus.each do |s| %>
+      <% if order.StatusRef == s.id  %>
+        <%= s.Status %>
+
+      <% end %>
+    <% end %></td> 
+
+    <td><% @products.each do |s| %>
+      <% if order.ProductRef == s.id  %>
+        <%= s.ProductName%>
+
+      <% end %>
+    <% end %></td> 
+
+    <td><%= order.Quantity %></td>
+
+    <td><% @products.each do |s| %>
+      <% if order.ProductRef == s.id  %>
+        <%= s.ProductCost%>
+
+      <% end %>
+    <% end %></td> 
+   <td><%= order.Total %></td>
+
+    <td><%= link_to 'Edit', edit_order_path(order) %></td>
+    <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Order', new_order_path %>

@@ -1,6 +1,11 @@
 <h1>Listing suppliers</h1>
 
-<table>
+<%= form_tag suppliers_path, :method => 'get', :label => false do %>
+    <%= text_field_tag :search, params[:search] , :wrapper => :prepend%>
+    <%= submit_tag "Search", :name => nil , :class => 'btn-primary'%>
+<% end %>
+
+<table class="table table-bordered table-striped">
   <tr>
     <th>Company</th>
     <th>Lastname</th>
@@ -9,7 +14,6 @@
     <th>Address</th>
     <th>City</th>
     <th>Country</th>
-    <th></th>
     <th></th>
     <th></th>
   </tr>
@@ -23,7 +27,7 @@
     <td><%= supplier.Address %></td>
     <td><%= supplier.City %></td>
     <td><%= supplier.Country %></td>
-    <td><%= link_to 'Show', supplier %></td>
+   
     <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>
     <td><%= link_to 'Destroy', supplier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
@@ -34,4 +38,3 @@
 
 <%= link_to 'New Supplier', new_supplier_path %>
 </br>
-<%= link_to 'Home', welcome_index_path %>

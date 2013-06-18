@@ -1,6 +1,11 @@
 <h1>Listing shippers</h1>
 
-<table>
+<%= form_tag shippers_path, :method => 'get', :label => false do %>
+    <%= text_field_tag :search, params[:search] , :wrapper => :prepend%>
+    <%= submit_tag "Search", :name => nil , :class => 'btn-primary'%>
+<% end %>
+
+<table class="table table-bordered table-striped">
   <tr>
     <th>Company</th>
     <th>Lastname</th>
@@ -10,7 +15,7 @@
     <th>City</th>
     <th>Country</th>
     <th></th>
-    <th></th>
+    
     <th></th>
   </tr>
 
@@ -23,7 +28,7 @@
     <td><%= shipper.Address %></td>
     <td><%= shipper.City %></td>
     <td><%= shipper.Country %></td>
-    <td><%= link_to 'Show', shipper %></td>
+   
     <td><%= link_to 'Edit', edit_shipper_path(shipper) %></td>
     <td><%= link_to 'Destroy', shipper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
@@ -34,4 +39,3 @@
 
 <%= link_to 'New Shipper', new_shipper_path %>
 </br>
-<%= link_to 'Home', welcome_index_path %>

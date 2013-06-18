@@ -2,8 +2,8 @@ class ShippersController < ApplicationController
   # GET /shippers
   # GET /shippers.json
   def index
-    @shippers = Shipper.all
-
+    #@shippers = Shipper.all
+    @shippers = Shipper.search(params[:search])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @shippers }

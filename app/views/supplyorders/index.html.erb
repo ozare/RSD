@@ -1,6 +1,6 @@
 <h1>Listing supplyorders</h1>
 
-<table>
+<table class="table table-bordered table-striped">
   <tr>
     
 
@@ -9,13 +9,13 @@
     <th>Created By</th>
     <th>Submitteddate</th>
     <th>Expecteddate</th>
-    <th>Shippingfee</th>
+    <th>Shipping<br/>fee</th>
     <th>Paymentdate</th>
-    <th>Paymentammount</th>
-    <th>Paymentmethod</th>
+    <th>Payment<br/>ammount</th>
+    <th>Payment<br/>method</th>
     <th>Statusref</th>
     <th></th>
-    <th></th>
+   
     <th></th>
   </tr>
 
@@ -52,7 +52,7 @@
 
       <% end %>
     <% end %></td> 
-    <td><%= link_to 'Show', supplyorder %></td>
+   
     <td><%= link_to 'Edit', edit_supplyorder_path(supplyorder) %></td>
     <td><%= link_to 'Destroy', supplyorder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
@@ -64,4 +64,3 @@
 
 <%= link_to 'New Supplyorder', new_supplyorder_path %>
 </br>
-<%= link_to 'Home', welcome_index_path %>

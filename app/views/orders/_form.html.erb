@@ -1,0 +1,97 @@
+<%= simple_form_for @order, :html => { :class => 'form-horizontal' } do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sorder.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-inputs">
+    <div class='field'>
+      <%= f.input :name, :wrapper => :prepend, :label => false do %>
+    <%= content_tag :span, "EmployeeRef", :class => "add-on" %>
+    <%= f.collection_select(:EmployeeRef, Employee.all, :id, :LastName)%>
+    <% end %>
+
+  </div>
+    <div class='field'>
+    <%= f.input :name, :wrapper => :prepend, :label => false do %>
+    <%= content_tag :span, "CustomerRef", :class => "add-on" %>
+    <%= f.collection_select(:CustomerRef, Customer.all, :id, :LastName)%>
+  <% end %>
+  </div>
+
+   <div class="field">
+   <%= f.input :name, :wrapper => :prepend, :label => false do %>
+    <%= content_tag :span, "OrderDate", :class => "add-on" %>
+    <%= f.date_select :OrderDate %>
+    <%end%>
+  </div>
+    
+    <div class="field">
+   <%= f.input :name, :wrapper => :prepend, :label => false do %>
+    <%= content_tag :span, "ShippedDate", :class => "add-on" %>
+    <%= f.date_select :ShippedDate %>
+    <%end%>
+  </div>
+
+  <div class='field'>
+    <%= f.input :name, :wrapper => :prepend, :label => false do %>
+    <%= content_tag :span, "ShipperRef", :class => "add-on" %>
+    <%= f.collection_select(:ShipperRef, Shipper.all, :id, :LastName)%>
+  <% end %>
+  </div>
+    
+    <div class="field">
+   <%= f.input :name, :wrapper => :prepend, :label => false do %>
+    <%= content_tag :span, "ShipFee", :class => "add-on" %>
+    <%= f.number_field :ShipFee %>
+    <%end%>
+  </div>
+
+   <div class='field'>
+    <%= f.input :name, :wrapper => :prepend, :label => false do %>
+    <%= content_tag :span, "PaymentType", :class => "add-on" %>
+    <%= f.text_field :PaymentType %>
+  <% end %>
+  </div>
+    
+    <div class="field">
+   <%= f.input :name, :wrapper => :prepend, :label => false do %>
+    <%= content_tag :span, "PaymentDate", :class => "add-on" %>
+    <%= f.date_select :PaymentDate %>
+    <%end%>
+  </div>
+
+  <div class="field">
+   <%= f.input :name, :wrapper => :prepend, :label => false do %>
+    <%= content_tag :span, "StatusRef", :class => "add-on" %>
+    <%= f.collection_select(:StatusRef, Supplyordersstatus.all, :id, :Status)%>
+    <%end%>
+  </div>
+
+    <div class='field'>
+    <%= f.input :name, :wrapper => :prepend, :label => false do %>
+    <%= content_tag :span, "ProductRef", :class => "add-on" %>
+    <%= f.collection_select(:ProductRef, Product.all, :id, :ProductCode)%>
+  <% end %>
+  </div>
+   <div class="field">
+   <%= f.input :name, :wrapper => :prepend, :label => false do %>
+    <%= content_tag :span, "Quantity", :class => "add-on" %>
+    <%= f.number_field :Quantity %>
+    <%end%>
+  </div>
+    
+
+  </div>
+
+   <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+  </div>
+<% end %>

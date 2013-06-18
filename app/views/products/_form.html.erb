@@ -1,4 +1,4 @@
-<%= form_for(@product) do |f| %>
+<%= simple_form_for @product, :html => { :class => 'form-horizontal' } do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
@@ -12,26 +12,36 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :ProductCode %><br />
+    <%= f.input :name, :wrapper => :prepend, :label => false do %>
+    <%= content_tag :span, "Product Code", :class => "add-on" %>
     <%= f.text_field :ProductCode %>
+  <% end %>
   </div>
   <div class="field">
-    <%= f.label :ProductName %><br />
+    <%= f.input :name, :wrapper => :prepend, :label => false do %>
+    <%= content_tag :span, "Product Name", :class => "add-on" %>
     <%= f.text_field :ProductName %>
+  <% end %>
   </div>
   <div class="field">
-    <%= f.label :ProductDepth %><br />
+    <%= f.input :name, :wrapper => :prepend, :label => false do %>
+    <%= content_tag :span, "Product Depth", :class => "add-on" %>
     <%= f.text_field :ProductDepth %>
+  <% end %>
   </div>
   <div class="field">
-    <%= f.label :ProductCategory %><br />
+    <%= f.input :name, :wrapper => :prepend, :label => false do %>
+    <%= content_tag :span, "Product Category", :class => "add-on" %>
     <%= f.text_field :ProductCategory %>
+  <% end %>
   </div>
   <div class="field">
-    <%= f.label :ProductCost %><br />
-    <%= f.number_field :ProductCost %>
+    <%= f.input :name, :wrapper => :prepend, :label => false do %>
+    <%= content_tag :span, "Product Cost", :class => "add-on" %>
+    <%= f.text_field :ProductCost %>
+  <% end %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
   </div>
 <% end %>
