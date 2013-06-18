@@ -6,4 +6,12 @@ class Order < ActiveRecord::Base
   belongs_to :shipper
   belongs_to :product
   belongs_to :supplyordersstatus
+
+  def self.search(search)
+	  if search
+	    find(:all, :conditions => ['PaymentType LIKE ?', "%#{search}%"])
+	  else
+	    find(:all)
+	  end
+	end
 end

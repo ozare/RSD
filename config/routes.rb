@@ -3,7 +3,7 @@ Rsdb::Application.routes.draw do
   resources :orders
 
 
-  root :to => 'supplyorders#index'
+  root :to => 'orders#index'
 
   resources :welcome
   

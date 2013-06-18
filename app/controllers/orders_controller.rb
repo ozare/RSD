@@ -2,9 +2,13 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    #@orders = Order.all
 
+    @orders = Order.search(params[:search])
    
+    
+    #@orders = Order.where('start BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).all
+
     @employees = Employee.all
     @customers = Customer.all
     @shippers = Shipper.all
@@ -70,6 +74,8 @@ class OrdersController < ApplicationController
   # PUT /orders/1.json
   def update
     @order = Order.find(params[:id])
+
+    #@product = Product.find(@order.ProductRef)
 
     respond_to do |format|
       if @order.update_attributes(params[:order])
